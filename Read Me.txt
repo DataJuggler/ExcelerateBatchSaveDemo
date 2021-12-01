@@ -1,0 +1,30 @@
+This project serves as a good demo of how to save to 3 sheets at once.
+
+Run this project, select the sheet Props.xlsx, and click the Load Data button.
+
+This project is just a simple demo of something I needed for 3D animating with IClone. I had a list of Prop Data, that was all
+in a table in one column.
+
+I code generated 3 classes * using Blazor Excelerate (https://excelerate.datajuggler.com), and used the 
+
+
+* - A note about the code generation. To make sure my tables had the correct data type, I added some sample data to sheets
+2 and 3, including values with decimal points, so that double were created not integers. Then I erased the sample data
+and ran this program.
+
+This program does the following:
+1. Loads all data from a workbook (3 sheets, but only one sheet has data at first).
+2. Extracts out every 6 rows, into a list of Prop objects.
+3. Sorts the prop objects by Name then by Current Time, so Sheet 3 (SortedProp) is in order by prop (car).
+
+All of the data is saved to Excel at once, using what is called a Batch.
+
+A batch contains a list of BatchItems, and each worksheet has a BatchItems collection created.
+
+For sheet one, the RowId is used to find the row from the worksheet, and when propData.Save() is called, the values are written
+back to the row.
+
+BatchItems2 and BatchItems3 are performing inserts, so NewRow is called on the Prop and SortedProp objects. 
+Then Save is called o write the values back to the row.
+
+Each BatchItem has an Updates property, and this property is a list of Rows to be written to the file.
