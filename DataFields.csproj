@@ -6,7 +6,12 @@
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Data Juggler.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Data Juggler.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DataJuggler.Excelerate" Version="1.7.3" />
