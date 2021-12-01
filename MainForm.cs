@@ -192,15 +192,8 @@ namespace DataFields
 
                                 case 5:
 
-                                    // if the number ends with a .0
-                                    if (prop.Value.ToString().EndsWith(".0"))
-                                    {
-                                        // replace out the .0, messes up the parse integer
-                                        prop.Value = prop.Value.Replace(".0", "");
-                                    }
-
                                     // now set the properties
-                                    newProp.CurrentTime = NumericHelper.ParseInteger(prop.Value, 0, -1);
+                                    newProp.CurrentTime = (int) NumericHelper.ParseDouble(prop.Value, 0, -1);
 
                                     // required
                                     break;
